@@ -1,20 +1,18 @@
-# Use an official lightweight Python base image
+# Use the official lightweight Python image
 FROM python:latest
 
 # Set the working directory inside the container
 WORKDIR /app
 
-# Copy dependency files first to leverage Docker layer caching
+# Copy and install dependencies
 COPY requirements.txt .
-
-# Install dependencies without storing local cache files
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the rest of the application files
+# Copy the rest of the application code
 COPY . .
 
-# Expose the application port
+# Expose the Flask port
 EXPOSE 5000
 
-# Execute production-ready web server
-CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app:app"]
+# Run the Flask application
+CMD ["python", "app.py"]
