@@ -49,7 +49,7 @@ jobs:
 
       # Step 5: Build and push the Docker image
       - name: Build and push Docker image
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v7
         with:
           context: .
           push: true
