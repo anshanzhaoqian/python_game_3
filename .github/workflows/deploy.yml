@@ -27,7 +27,7 @@ jobs:
         uses: actions/configure-pages@v6 # Optional utility, or omit for standard builds
         
       - name: Set up Docker Buildx Core
-        uses: docker/setup-buildx-action@v3
+        uses: docker/setup-buildx-action@v4
 
       # Step 3: Log in to the GitHub Container Registry
       - name: Log in to GitHub Container Registry
